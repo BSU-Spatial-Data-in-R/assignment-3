@@ -13,7 +13,7 @@ The third part of the course was designed to introduce to help you tie together 
 
 ## Instructions
 
-1. After you've joined the assignment repository, you should have this file (named Readme.md) inside of a R project named assignment-1-xx where xx is your github username (or initials). All of the data should be accessible on the server at `/opt/data/2022/assignment03/`.
+1. After you've joined the assignment repository, you should have this file (named Readme.md) inside of a R project named assignment-3-xx where xx is your github username (or initials).
 
 2. Once you've verified that you've correctly cloned the assignment repository, create a new Quarto document. Name this file assignment-3-xxx.qmd and give it a title (like M Williamson Assignment 3). Make sure that you select the html output option (Quarto can do a lot of cool things, but the html format is the least-likely to cause you additional headaches). We'll be using Quarto throughout the course so it's worth checking out the other tutorials in the getting started section.
 
@@ -27,3 +27,4 @@ The third part of the course was designed to introduce to help you tie together 
 
 ## The Data
 
+We'll be combining a few different datasets for this assignment. Some of them are located on the server at `/opt/data/2022/assignment03/`. The datasets in this folder include: `celltowers.csv` (a Kaggle dataset depicting the lat/long of cell towers in the US), `cb_2018_us_ua10_500k.shp` (a shapefiled depicting urban areas in the US from the US Census), `ua_list_all.xls` (the attributes of those urban areas), `nlcd.tif` (the National Land Cover dataset for WA, OR, ID, MT, WY), and `roadskm.tif` (the distance, in km, to primary and secondary roads in the same region). In addition, you'll need to use the `tidycensus` package (which we've used in class) download the __population__ and __median income__ datasets from the 5yr American Community Survey dataset at the __block group__ level.
