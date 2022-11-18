@@ -23,7 +23,7 @@ The third part of the course was designed to help you tie together the syntax yo
 
 5. Answer the questions making sure save and commit at least 4 more times (having 5 commits is part of the assignment).
 
-6. Render the document to html (you should now have at least 3 files in the repository: Readme.md, assignment-1-xx.qmd, and assignment-1-xx.html). Commit these changes and push them to the repository on GitHub. You should see the files there when you go to github.com.
+6. Render the document to html (you should now have at least 3 files in the repository: Readme.md, assignment-3-xx.qmd, and assignment-3-xx.html). Commit these changes and push them to the repository on GitHub. You should see the files there when you go to github.com.
 
 ## The Data
 
@@ -37,4 +37,4 @@ We'll be combining a few different datasets for this assignment. Some of them ar
 
 3. Finally, you are going to build a database of predictors and use them in a model explaining the occurrence of cell phone tower locations. In addition to the NLCD, roads, slope population, and median income datasets, you'll need to identify the population size of the nearest urban area to each cell phone tower. You'll need to do some extracting, some attribute joins, and some spatial joins to construct the necessary data. Once you've got your database, fit a logistic regression and a random forest model to the data. How do the model results compare? How do the spatial predictions compare? Write your pseudocode, run the analysis and show your results.
 
-4. Construct confusion matrices for your overlay, logisitc regression, and random forest models. What are the accuracy, sensitivity, and specificity for each of your models? Write out your pseudocode, show your confusion matrices (you can use a markdown table if you like), and state your results.  
+4. Construct confusion matrices for your overlay, logisitc regression, and random forest models. What are the accuracy, sensitivity, and specificity for each of your models? Finally, run an ROC analysis for your logistic regression and random forest model. How does your assessment of model quality differ between using the confusion matrices and the ROC/AUC analysis (if at all)? Write out your pseudocode, show your confusion matrices (you can use a markdown table if you like), and state your results. 
