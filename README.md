@@ -1,7 +1,7 @@
 # assignment-3
 This is the third assignment of the semester for HES 505.
 
-The third part of the course was designed to introduce to help you tie together the syntax you've learned so far to be able to conduct different kinds of spatial analyses. The ability to move from reading and manipulating your data towards a statistical analysis that is both geographically correct and statistically robust will we require you to integrate a variety of the techniques you've learned for manipulating tabular, `sf`, and raster objects. This assignment asks you to demonstrate those skills in a variety of ways. By the end of this assignment you should be able to:
+The third part of the course was designed to help you tie together the syntax you've learned so far to be able to conduct different kinds of spatial analyses. The ability to move from reading and manipulating your data towards a statistical analysis that is both geographically correct and statistically robust will we require you to integrate a variety of the techniques you've learned for manipulating tabular, `sf`, and raster objects. This assignment asks you to demonstrate those skills in a variety of ways. By the end of this assignment you should be able to:
 
 * Combine tabular, `sf`, and raster datasets using joins and extractions
 
