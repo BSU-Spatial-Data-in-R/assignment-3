@@ -1,15 +1,7 @@
 # assignment-3
-This is the third assignment of the semester for HES 505.
+This is the third assignment of the semester for HES 505. The last few lectures have focused on coordinates and gemoetries. In this assignment, we'll ude the different functions for accessing and transforming the crs of different spatial objects. We'll also use a little of the tidyverse to subset the data and access some of the geometry information for one of the observations in our dataset. You'll need to use both the lectures and the recorded examples (or check out the   tidyverse   tutorials linked in the lectures).
 
-The third part of the course was designed to help you tie together the syntax you've learned so far to be able to conduct different kinds of spatial analyses. The ability to move from reading and manipulating your data towards a statistical analysis that is both geographically correct and statistically robust will we require you to integrate a variety of the techniques you've learned for manipulating tabular, `sf`, and raster objects. This assignment asks you to demonstrate those skills in a variety of ways. By the end of this assignment you should be able to:
 
-* Combine tabular, `sf`, and raster datasets using joins and extractions
-
-* Generate kernel density estimates and estimate spatial autocorrelation
-
-* Conduct a series of 'suitability' analyses using weighted and statistical overlays
-
-* Evaluate the quality of your models using confusion matrices and statistical tests
 
 ## Instructions
 
@@ -21,22 +13,21 @@ The third part of the course was designed to help you tie together the syntax yo
 
 4. Save the changes and make your first commit!
 
-5. Answer the questions making sure save and commit at least 4 more times (having 5 commits is part of the assignment).
+5. Answer the questions making sure save and commit at least 3 more times (having 4 commits is part of the assignment).
 
 6. Render the document to html (you should now have at least 3 files in the repository: Readme.md, assignment-3-xx.qmd, and assignment-3-xx.html). Commit these changes and push them to the repository on GitHub. You should see the files there when you go to github.com.
 
 ## The Data
+For this assignment, you'll be lookcing at 3 different datasets. One from the Center for Disease Control's PLACES data describing the distribution of chronic health risks, one from the EPA describing exposure to PM2.5 (an important air pollutant), and one describing wildfire risk. You might imagine that as we become increasingly concerned with the evironmental justice concerns associated with fire, we might be concerned about whether more smoke increases the risk of chronic respiratory diseases. We won't totally answer that question this week, but you'll start to develop the workflow necessary to move towards that type of analysis. All of the data are on the server in the `opt/data/2023/assignment03/` folder.
 
-We'll be combining a few different datasets for this assignment. Some of them are located on the server at `/opt/data/2022/assignment03/`. The datasets in this folder include: `celltowers.csv` (a Kaggle dataset depicting the lat/long of cell towers in the US), `cb_2018_us_ua10_500k.shp` (a shapefiled depicting urban areas in the US from the US Census), `ua_list_all.xls` (the attributes of those urban areas), `nlcd.tif` (the National Land Cover dataset for WA, OR, ID, MT, WY), and `roadskm.tif` (the distance, in km, to primary and secondary roads in the same region). In addition, you'll need to use the `tidycensus` package (which we've used in class) download the __population__ and __median income__ datasets from the 5yr American Community Survey dataset at the __block group__ level. You'll aslo need to use the `raster::getData()` function to download the elevation data for the study region and the `terra::terrain()` function to estimate the slope.
 
 ## The Assignment
 
-1. Conduct an overlay analysis using all the NLCD, roads, slope population, and median income datasets (`hint: you'll probably want to rasterize the vector data from tidycensus`) to identify suitable areas for cellphone towers. Use a [markdown table](https://www.markdownguide.org/extended-syntax/) to report the thresholds you used to define suitable and unsuitable. Write out your psedocode for the process and then implement your overlay analysis. Use `plot()` to dipslay your final overlay.
+1. Write out the pseudocode that you would use to set up an analysis of the spatial correlations between chronic asthma risk, exposure to PM2.5, and wildfire. You don't have to write functions or any actual code. Just write the steps and insert named code blocks for each step.
+2. Read in the `cdc_nw.shp`, `pm_nw.shp`, and `wildfire_hazard_agg.tif` files and print the coordinate reference system for each object. Do they match?
+3. Re-project the `cdc_nw.shp` and `pm_nw.shp` shapefiles so that they have the same CRS as the `wildfire_hazard_agg.tfi` file. Verify that all the files have the same projection.
+4. How does reprojecting change the coordinates of the bounding box for the two shapefiles? Show your code
+5. What class of geometry does the `pm_nw.shp` have (show your code)? Now filter the `pm_nw.shp` file so that only the records from Ada County, Idaho are showing. Find the record with the lowest value for PM25. How many coordinates are associated with that geometry?
 
-2. Now bring in the cell phone tower dataset and build a kernel density estimate displaying the intensity of occurrence of cell towers across the region. Use Ripley's K to evaluate whether or not assumptions of second-order randomness are being violated. Estimate Moran's _I_ to assess the strength of autocorrelation in your data.  Write out your pseudocode and then complete the analysis. What do the different analyses tell you about spatial autocorrelation of cell tower locations? What variables appear correlated with the patterns you see in your KDE?
 
-3. Finally, you are going to build a database of predictors and use them in a model explaining the occurrence of cell phone tower locations. In addition to the NLCD, roads, slope population, and median income datasets, you'll need to identify the population size of the nearest urban area to each cell phone tower. You'll need to do some extracting, some attribute joins, and some spatial joins to construct the necessary data. Once you've got your database, fit a logistic regression and a random forest model to the data. How do the model results compare? How do the spatial predictions compare? Write your pseudocode, run the analysis and show your results.
 
-4. Construct confusion matrices for your overlay, logisitc regression, and random forest models. What are the accuracy, sensitivity, and specificity for each of your models? Finally, run an ROC analysis for your logistic regression and random forest model. How does your assessment of model quality differ between using the confusion matrices and the ROC/AUC analysis (if at all)? Write out your pseudocode, show your confusion matrices (you can use a markdown table if you like), and state your results. 
-
-5. Save your model fit objects using `saveRDS()` (only your model fit objects) a Google Drive folder and place the link to that folder at the end of the assignment (you'll need these for the next assignment. 
