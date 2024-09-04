@@ -1,5 +1,5 @@
 # assignment-3
-This is the third assignment of the semester for HES 505. The last few lectures have focused on coordinates and gemoetries. In this assignment, we'll ude the different functions for accessing and transforming the crs of different spatial objects. We'll also use a little of the tidyverse to subset the data and access some of the geometry information for one of the observations in our dataset. You'll need to use both the lectures and the recorded examples (or check out the   tidyverse   tutorials linked in the lectures).
+This is the third assignment of the semester for HES 505. The last few lectures have focused on coordinates and geometries. In this assignment, we'll use the different functions for accessing and transforming the crs of different spatial objects. We'll also use a little of the tidyverse to subset the data and access some of the geometry information for one of the observations in our dataset. You'll need to use both the lectures and the recorded examples (or check out the   tidyverse   tutorials linked in the lectures).
 
 
 
@@ -18,7 +18,7 @@ This is the third assignment of the semester for HES 505. The last few lectures 
 6. Render the document to html (you should now have at least 3 files in the repository: Readme.md, assignment-3-xx.qmd, and assignment-3-xx.html). Commit these changes and push them to the repository on GitHub. You should see the files there when you go to github.com.
 
 ## The Data
-For this assignment, you'll be lookcing at 3 different datasets. One from the Center for Disease Control's PLACES data describing the distribution of chronic health risks, one from the EPA describing exposure to PM2.5 (an important air pollutant), and one describing wildfire risk. You might imagine that as we become increasingly concerned with the evironmental justice concerns associated with fire, we might be concerned about whether more smoke increases the risk of chronic respiratory diseases. We won't totally answer that question this week, but you'll start to develop the workflow necessary to move towards that type of analysis. All of the data are on the server in the `opt/data/2023/assignment03/` folder.
+For this assignment, you'll be looking at 3 different datasets. One from the Center for Disease Control's PLACES data describing the distribution of chronic health risks, one from the EPA describing exposure to PM2.5 (an important air pollutant), and one describing wildfire risk. You might imagine that as we become increasingly concerned with the environmental justice concerns associated with fire, we might be concerned about whether more smoke increases the risk of chronic respiratory diseases. We won't totally answer that question this week, but you'll start to develop the workflow necessary to move towards that type of analysis. All of the data are on the server in the `opt/data/data/assignment03/` folder.
 
 
 ## The Assignment
