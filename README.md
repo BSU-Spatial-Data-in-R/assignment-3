@@ -25,7 +25,7 @@ For this assignment, you'll be looking at 3 different datasets. One from the Cen
 
 1. Write out the pseudocode that you would use to set up an analysis of the spatial correlations between chronic asthma risk, exposure to PM2.5, and wildfire. You don't have to write functions or any actual code. Just write the steps and insert named code blocks for each step.
 2. Read in the `cdc_nw.shp`, `pm_nw.shp`, and `wildfire_hazard_agg.tif` files and print the coordinate reference system for each object. Do they match?
-3. Re-project the `cdc_nw.shp` and `pm_nw.shp` shapefiles so that they have the same CRS as the `wildfire_hazard_agg.tfi` file. Verify that all the files have the same projection.
+3. Re-project the `cdc_nw.shp` and `pm_nw.shp` shapefiles so that they have the same CRS as the `wildfire_hazard_agg.tif` file. Verify that all the files have the same projection.
 4. How does reprojecting change the coordinates of the bounding box for the two shapefiles? Show your code
 5. What class of geometry does the `pm_nw.shp` have (show your code)? Now filter the `pm_nw.shp` file so that only the records from Ada County, Idaho are showing. Find the record with the lowest value for PM25. How many coordinates are associated with that geometry?
 
